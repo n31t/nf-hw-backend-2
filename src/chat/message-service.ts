@@ -23,6 +23,10 @@ class MessageService {
     await messageModel.findByIdAndDelete(id).exec();
     return;
   }
+
+  async getMessagesByChatId(chatId: string): Promise<IMessage[]> {
+    return await messageModel.find({ chat: chatId}).exec();
+  }
 }
 
 export default MessageService;

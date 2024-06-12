@@ -27,6 +27,7 @@ class ChatService {
     await chatModel.findByIdAndDelete(id).exec();
     return;
   }
+
 }
 
 export default ChatService;

@@ -66,6 +66,16 @@ class MessageController {
       res.status(500).send({ error: error.message });
     }
   }
+
+    getMessagesByChatId = async (req: Request, res: Response): Promise<void> => {
+        try {
+        const { chatId } = req.params;
+        const messages = await this.messageService.getMessagesByChatId(chatId);
+        res.status(200).json(messages);
+        } catch (error: any) {
+        res.status(500).send({ error: error.message });
+        }
+    }
 }
 
 export default MessageController;

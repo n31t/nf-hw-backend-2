@@ -11,5 +11,6 @@ messageRouter.get('/messages/', messageController.getMessages);
 messageRouter.get('/messages/:id', messageController.getMessageById);
 messageRouter.put('/messages/:id', messageController.updateMessage);
 messageRouter.delete('/messages/:id', messageController.deleteMessage);
+messageRouter.get('/messages/chat/:chatId', messageController.getMessagesByChatId);
 
 export default messageRouter;
