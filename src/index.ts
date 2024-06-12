@@ -18,7 +18,7 @@ const app = express();
 app.use(logger);
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow this origin
+  origin: process.env.FRONTEND_ORIGIN, // Allow this origin
   methods: ['GET', 'POST'], // Allow these methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
   credentials: true // Enable cookies
@@ -28,7 +28,7 @@ app.use('/api/v1/',globalRouter);
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: process.env.FRONTEND_ORIGIN,
   }
 });
 
