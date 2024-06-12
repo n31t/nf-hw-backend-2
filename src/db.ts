@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/lecture1');
+        await mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://mongo:mongopassword@cluster0.vm807iv.mongodb.net/');
         console.log('MongoDB connected...');
     } catch (err:any) {
         console.error(err.message);
